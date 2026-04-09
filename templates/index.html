@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eye Disease AI</title>
+</head>
+<body style="text-align:center; font-family:Arial;">
+
+    <h1> Eye Disease Detection</h1>
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <br><br>
+        <button type="submit">Tahmin Et</button>
+    </form>
+
+    {% if img_path %}
+        <h3>Yüklenen Görüntü:</h3>
+        <img src="{{ img_path }}" width="300">
+    {% endif %}
+
+    {% if prediction %}
+        <h2>Sonuç: {{ prediction }}</h2>
+        <h3>Doğruluk: %{{ confidence }}</h3>
+    {% endif %}
+
+</body>
+</html>
